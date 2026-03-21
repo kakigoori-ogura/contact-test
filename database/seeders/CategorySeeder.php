@@ -12,9 +12,13 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Category::create(['content' => 'ご意見']);
+        \App\Models\Category::create(['content' => '商品のお届けについて']);
 
-        \App\Models\Category::create(['content' => 'ご質問']);
+        \App\Models\Category::create(['content' => '商品の交換について']);
+
+        \App\Models\Category::create(['content' => '商品トラブル']);
+
+        \App\Models\Category::create(['content' => 'ショップへのお問い合せ']);
 
         \App\Models\Category::create(['content' => 'その他']);
     }
