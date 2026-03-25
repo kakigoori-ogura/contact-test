@@ -1,52 +1,59 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+    <body class="min-h-screen flex flex-col font-sans">
+        {{-- ヘッダー --}}
+        <header class="w-full flex justify-center items-center px-10 py-4 bg-white shadow-sm border-b relative">
+        <h1 class="text-xl font-serif text-[#8b7e6a]">FashionablyLate</h1>
+        <a href="/login" class="absolute right-10 text-sm bg-gray-100 px-4 py-1 text-[#8b7e6a] rounded hover:bg-[#8b7e6a] hover:text-white transition">login</a>
+    </header>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    {{--  メインエリア  --}}
+    <main class="flex-grow flex flex-col items-center justify-center bg-[#f1ece7] pb-20">
+        {{-- タイトル --}}
+        <h2 class="text-2xl text-[#8b7e6a] mt-10 mb-10 text-center font-serif">Register</h2>
+        {{-- フォーム --}}
+        <div class="bg-white w-[400px] p-10 shadow-md rounded">
+            <form method="POST" action="/register">
+                @csrf
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+                {{-- 名前 --}}
+                <div class="mb-4">
+                    <label class="block text-sm text-[#8b7e6a] mb-1">お名前</label>
+                    <input type="text" name="name" value="{{ old('name') }}" class="w-full p-2 bg-gray-100 border-none outline-none" placeholder="例：山田太郎">
+                </div>
+                @error('name')
+    <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+@enderror
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                {{-- メール --}}
+                <div class="mb-4">
+                    <label class="block text-sm text-[#8b7e6a] mb-1">メールアドレス</label>
+                    <input type="email" name="email" value="{{ old('email') }}" class="w-full p-2 bg-gray-100 border-none outline-none" placeholder="例：test@example.com">
+                </div>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+                {{-- パスワード --}}
+                <div class="mb-6">
+                    <label class="block text-sm text-[#8b7e6a] mb-1">パスワード</label>
+                    <input type="password" name="password" class="w-full p-2 bg-gray-100 border-none outline-none" placeholder="例：coach-tech1106">
+                </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                {{-- ボタン --}}
+                <div class="mt-8 flex justify-center">
+                    <button class="bg-[#8b7e6a] text-white px-10 py-2 hover:opacity-90">
+                        登録
+                    </button>
+                </div>
+            </form>
+    </div>
+    </main>
+</body>
+</html>
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+<!-- http://localhost/login -->

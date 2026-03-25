@@ -5,6 +5,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+
+<header class="flex justify-between items-center px-10 py-4 bg-white">
+    <div class="text-2xl font-serif text-[#8b7e6a]">FashionablyLate</div>
+    <a href="/login" class="border border-[#8b7e6a] text-[#8b7e6a] px-4 py-1 rounded">login</a>
+</header>
+
 <div class="min-h-screen flex flex-col items-center justify-center bg-[#f1ece7]">
 
     {{-- タイトル --}}
