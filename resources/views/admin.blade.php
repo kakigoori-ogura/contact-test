@@ -4,6 +4,13 @@
             <h2 class="text-2xl font-serif mt-4 text-[#8b7e6a]">Admin</h2>
     </div>
 
+    <form method="POST" action="/logout" class="absolute top-4 right-6">
+        @csrf
+        <button class="text-sm text-[#8b7e6a] underline">
+            ログアウト
+        </button>
+    </form>
+
     <div class="py-12 bg-gray-50">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

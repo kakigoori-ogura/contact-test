@@ -22,9 +22,25 @@ class ContactController extends Controller
         $query->where('gender', $request->gender);
         }
 
+         // お問い合わせの種類
+        if ($request->category_id) {
+        $query->where('category_id', $request->category_id);
+        }
+
+        // 日付
+        if ($request->date) {
+        $query->whereDate('created_at', $request->date);
+        }
+
+
         $contacts = $query->paginate(10);
 
         return view('admin', compact('contacts'));
 
+    }
+    public function confirm(Request $request){
+        $contact = $request->all();
+
+        return view('confirm', compact('contact'));
     }
 }

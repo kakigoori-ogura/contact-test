@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Login</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <div class="min-h-screen flex flex-col items-center justify-center bg-[#f1ece7]">
@@ -44,6 +43,3 @@
     </div>
 </body>
 </html>
-
-
-<!-- http://localhost/login -->
