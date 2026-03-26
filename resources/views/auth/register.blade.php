@@ -19,7 +19,7 @@
         <h2 class="text-2xl text-[#8b7e6a] mt-10 mb-10 text-center font-serif">Register</h2>
         {{-- フォーム --}}
         <div class="bg-white w-[400px] p-10 shadow-md rounded">
-            <form method="POST" action="/register">
+            <form method="GET" action="/contact">
                 @csrf
 
                 {{-- 名前 --}}
@@ -45,7 +45,7 @@
 
                 {{-- ボタン --}}
                 <div class="mt-8 flex justify-center">
-                    <button class="bg-[#8b7e6a] text-white px-10 py-2 hover:opacity-90">
+                    <button type="submit" class="bg-[#8b7e6a] text-white px-10 py-2 hover:opacity-90">
                         登録
                     </button>
                 </div>

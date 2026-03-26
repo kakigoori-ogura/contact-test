@@ -1,15 +1,14 @@
 <x-app-layout>
     <div class="text-center py-8 bg-white border-b">
-            <h1 class="text-3xl font-serif text-[#8b7e6a] tracking-widest">FashionablyLate</h1>
-            <h2 class="text-2xl font-serif mt-4 text-[#8b7e6a]">Admin</h2>
-    </div>
-
-    <form method="POST" action="/logout" class="absolute top-4 right-6">
-        @csrf
-        <button class="text-sm text-[#8b7e6a] underline">
-            ログアウト
+<h1 class="text-3xl font-serif text-[#8b7e6a] tracking-widest">FashionablyLate</h1>
+<h2 class="text-2xl font-serif mt-4 text-[#8b7e6a]">Admin</h2>
+<form method="POST" action="/logout" class="absolute right-10">
+@csrf
+<button class="border border-[#8b7e6a] text-[#8b7e6a] px-4 py-1 text-sm hover:bg-[#8b7e6a] hover:text-white transition">
+            logout
         </button>
     </form>
+</div>
 
     <div class="py-12 bg-gray-50">
 
