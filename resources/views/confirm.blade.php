@@ -13,7 +13,7 @@
                 <tr class="border-b border-gray-200">
                     <th class="w-1/3 bg-[#b2a191] text-white p-4 font-bold">お名前</th>
                     <td class="p-4 text-gray-700">
-                        {{ $contact['last_name'] }}　{{ $contact['first_name'] }}
+                        {{ $contact['last_name'] }}{{ $contact['first_name'] }}
                     </td>
                 </tr>
                 
@@ -80,11 +80,18 @@
         </div>
 
         {{-- ボタンエリア --}}
-        <form action="{{ route('thanks') }}" method="get">
-            <button class="bg-[#8b7e6a] text-white px-12 py-2 font-bold hover:opacity-90">送信</button>
-        </form>
-            {{-- 入力画面に戻るリンク --}}
-            <a href="#" onclick="history.back()" class="text-[#8b7e6a] underline pt-2">修正</a>
-        </div>
+<div class="flex justify-center items-center gap-8 mt-12">
+    {{-- 送信ボタン --}}
+    <form action="{{ route('thanks') }}" method="get">
+        <button class="bg-[#8b7e6a] text-white px-12 py-2 font-bold hover:opacity-90">
+            送信
+        </button>
+    </form>
+
+    {{-- 修正リンク --}}
+    <a href="#" onclick="history.back()" class="text-[#8b7e6a] underline">
+        修正
+    </a>
+</div>
     </div>
 </x-app-layout>
